@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../sections/Footer.astro';
+import Graph from '../sections/Graph.astro';
+import Info from '../sections/Info.astro';
+import Hero from '../sections/Hero.astro';
+import PrincipalInfo from '../sections/PrincipalInfo.astro';
+import Application from '@/sections/Application.astro';
+import Comments from '@/sections/Comments.astro';
+---
+
+<Layout title="Uwired">
+	<Hero /> <!-- Presentacion -->
+	<main>
+		<PrincipalInfo /> <!-- Marco Teorico Basado en lo que usaremos de la ANE -->
+		<Info /> <!-- Manual de Usuario -->
+		<Application /> <!-- Aplicacion -->
+		<Graph /> <!-- ¿Grafico explicativo? -->
+		<Comments /> <!-- Falta hacer los comentarios o una base para ello -->
+	</main>
+	<Footer />
+</Layout>
+
+

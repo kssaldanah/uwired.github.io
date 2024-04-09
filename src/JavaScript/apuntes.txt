@@ -1,0 +1,78 @@
+Primera parte
+
+--- PIRE < 40
+    1 - No necesita medicion
+    2 - No puede haber otra antena o instalar la antena con el PIRE < 10W si hay otra 
+        antena a una distancia de 10m en una F - 1500 mHz o a 5 metros para F >= 1500 
+        en la direccion del lobulo y una distancia de 2 metros en otras direcciones
+        para cualquier rango de frecuencia
+
+
+--- PIRE > 50    
+    1 - Si el PIRE es menor o igual a 50 dBm, la distancia minima del zonas publicas, 
+        la direccion del lobulo es 2 metros (F < 1500 mHz) o 1 metro (F >= 1500 mHz)
+
+-- Pendiente 
+
+Hacer la ecuacion 3 distancia D, para eso se necesita la dinamica de agregar mas bandas
+a una antena cuando esta es multibanda
+
+//Se retorna el valor que requiramos
+    if(tipo == 1){  //retornar distancia minima publico general en horizontal
+        return mDHPG;
+        
+    } else if(tipo == 2){   //retornar distancia minima ocupacional en horizontal
+        return mDHOP;
+
+    }else if(tipo==3){ // Retorna la hipotenusa desde la antena a la cabeza de la persona 
+        
+        return DmAPG;
+        
+    }else {// Retorna la hipotenusa desde la antena a la zona ocupacional 
+        return DmAOP;
+    }
+
+
+            //Downtilt en radianes
+            DwtR= radianes(downtild);
+
+            //Altura en la que debe estar la parte mas baja radiante
+            //de la antena, sino, comparar con la altura ingresada
+            Hb=Math.max(DwtR*Math.tan(DwtR), 3.5);
+
+/*    
+    Simbologia de los textos
+    
+    - m : menor
+    - M : Mayor
+    - p : PIRE
+    - a : Altura
+    - f : Frecuencia
+
+    Se compone de 3 partes que se repiten a favor de las caracteristicas importantes de los datos:
+
+    Primer parte | Referencia |  -  Segunda parte | Relacion |  -  Tercer parte | Valor |  -  i.. parte (dependiendo de si 
+                                                                                              necesita mayor caracterizacion)
+
+    Ejemplo : |p|m|40|a|m|2| corresponderia a |PIRE| menor que | 40 | altura | mayor que | 2 | 
+*/ 
+
+
+alert("Minima distancia a la antena para publico general : " + DmAPG.toFixed(2) + "metros\n" +
+        "La distancia minima ocupacional : " + DmAOP.toFixed(2) + "metros\n" +
+        "La distancia minima horizontal a la estructura : " + mDHPG.toFixed(2) + " metros\n" +
+        "La distancia minima ocupacional a la estructura : : " + mDHOP.toFixed(2) + " metros")
+
+
+
+
+
+
+        if (contador == 0){
+            alert( 
+                "Minima distancia a la antena para publico general : " + DmAPG.toFixed(2) + "metros\n" +
+                "La distancia minima ocupacional : " + DmAOP.toFixed(2) + "metros\n" +
+                "La distancia minima horizontal a la estructura publico general: " + mDHPG.toFixed(2) + " metros\n" +
+                "La distancia minima ocupacional a la estructura zona ocupacional : : " + mDHOP.toFixed(2) + " metros")
+        }
+        contador++;

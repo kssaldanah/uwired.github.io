@@ -1,0 +1,119 @@
+<astro>
+  <style>
+    .comment-section {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+    }
+
+    .comment-item {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .comment-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .comment-email {
+      font-style: italic;
+      margin-bottom: 5px;
+    }
+
+    .comment-form {
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .comment-item {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+  </style>
+
+  <section class="comment-section">
+    <h2>Comentarios</h2>
+
+    <form class="comment-form" id="commentForm">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Tu nombre"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Tu correo electrónico"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje">Mensaje:</label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          rows="4"
+          placeholder="Escribe tu comentario"
+          required
+          maxlength="200"></textarea>
+      </div>
+
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+
+    <button id="toggleCommentsBtn" class="btn">Mostrar Comentarios</button>
+    <ul class="comment-list" id="commentList" style="display: none;">
+      <!-- Aquí se agregarán los comentarios dinámicamente -->
+    </ul>
+  </section>
+
+  <script type="module" src="./src/JavaScript/Comment.js"></script>
+</astro>

@@ -1,0 +1,31 @@
+---
+import '@fontsource/koulen';
+import '@fontsource-variable/jost';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Aplicación web para determinar el cumplimiento de estaciones transmisoras con la resolución 773 de la ANE. Interfaz intuitiva y gráficos explicativos." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/Pagina_p.png" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="max-w-6xl px-10 pt-20"></div>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	html {
+		font-family: "Jost Variable", "koulen", system-ui, sans-serif;
+		background: #fff;
+	}
+</style>
